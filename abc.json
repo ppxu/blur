@@ -1,0 +1,14 @@
+{
+    "name": "blur",
+    "version": "1.0",
+    "desc": "实现模糊效果",
+    "cover": "",
+    "tag":"模糊",
+    "author": {
+        "name": "自寒",
+        "email": "zihan.yx@taobao.com",
+        "page": ""
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
