@@ -1,30 +1,14 @@
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Blur.js</title>
-  
+    <meta charset="utf-8"/>
+    <title>blur的demo</title>
+
     <script type='text/javascript' src='http://g.tbcdn.cn/kissy/k/1.3.2/seed.js'></script>
-  
+    <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css">
     <style type='text/css'>
         body{
             margin:0;padding:0; 
             text-align: center;
-        }
-        .circle{
-            margin:0 auto;
-            
-            -webkit-box-shadow:0 2px 2px #000, 0 1px 0 #fff inset;
-            -moz-box-shadow:0 2px 2px #000, 0 1px 0 #fff inset;
-            box-shadow:0 2px 2px #000, 0 1px 0 #fff inset;
-            
-            width:255px;
-            height:255px;
-            
-            -webkit-border-radius:127px;
-            -moz-border-radius:127px;
-            border-radius:127px;
-            
-            cursor:move;
         }
         .blur{
             width: 500px;
@@ -42,43 +26,41 @@
     </style>
 </head>
 <body>
+    <h2>blur的demo</h2>
     <div class="blur">
         <img class="blur-img" src="./dota.jpg" />
     </div>
     <input type="range" class="range" min="0" max="150" step="1" value="20" />
     <span class="radius">20</span>
-    <!-- <div class="circle"></div> -->
-    <!-- <div class="blur"><img src="./dota.jpg" /></div> -->
     <script type="text/javascript">
-        KISSY.config({
-          packages:[
-            {
-              name:"gallery",
-              path:"../../../",
-              ignorePackageNameInUri:true,
-              charset:"utf-8"
-            }
-          ]
-        });
+        var S = KISSY;
 
-        KISSY.use('gallery/blur/1.0/index,node', function(S,Blur,Node){
-            var $ = Node.all;
+        if(S.Config.debug) {
+            S.config({
+              packages:[
+                {
+                  name:"gallery",
+                  path:"../../../",
+                  ignorePackageNameInUri:true,
+                  charset:"utf-8"
+                }
+              ]
+            });
+        }
+
+        S.use('gallery/blur/1.0/index', function(S,Blur){
+            var $ = S.all;
             var b1 = new Blur({
                 source: '.blur',
                 radius: 20
             })
+            
             var range = $('.range'), radius = $('.radius');
             range.on("change", function() {
                 var val = this.value;
                 radius.text(val);
                 b1.refresh({radius: val});
             });
-            /*var b2 = new Blur({
-                node: '.circle',
-                draggable: true,
-                overlay: 'rgba(255,255,255,0.2)',
-                radius:20
-            });*/
         })
     </script>
 </body>
