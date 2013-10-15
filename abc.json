@@ -1,13 +1,13 @@
 {
     "name": "blur",
     "version": "1.0",
-    "desc": "实现模糊效果",
-    "cover": "",
+    "desc": "实现图片模糊效果",
+    "cover": "http://gtms01.alicdn.com/tps/i1/T13VrEFgNaXXXkAj2o-600-600.png",
     "tag":"模糊",
     "author": {
         "name": "自寒",
         "email": "zihan.yx@taobao.com",
-        "page": ""
+        "page": "https://github.com/ppxu"
     },
     "type": "kissy-gallery",
     "type-url": "http://gallery.kissyui.com/guide"
